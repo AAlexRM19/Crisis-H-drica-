@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis Hídrica - One Page</title>
+
+    <!-- Tailwind CSS (Framework CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (Iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+    <!-- Hoja de Estilos Personalizada -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Configuración de colores personalizados para Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandNavy: '#0d0e6e',
+                        brandBlue: '#84c5f4',
+                        brandFooter: '#71bcf2',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex justify-center py-0 md:py-8 sm:px-4 bg-white">
+
+    <!-- Contenedor estilo tarjeta móvil responsiva -->
+    <main class="w-full max-w-md bg-white min-h-screen flex flex-col justify-between overflow-hidden shadow-2xl md:rounded-3xl border border-slate-200">
+
+        <!-- SECCIÓN DE CONTENIDO -->
+        <div class="px-5 pt-6 pb-4 space-y-6">
+
+            <!-- Imagen satelital superior -->
+            <div class="w-full rounded-2xl overflow-hidden shadow-md">
+                <img src="imagenes/Portada page.png" 
+                     alt="Vista aérea represa / agua" 
+                     class="w-full h-80 object-cover filter contrast-125 saturate-140 mix-blend-multiply"
+                     onerror="this.src='https://placehold.co/600x400/101050/84c5f4?text=Vista+Aerea+Presa'">
+            </div>
+
+            <!-- Tarjeta con insignia: "¿Qué es la Crisis Hídrica?" -->
+            <div class="relative mt-8">
+                <div class="bg-brandNavy text-white p-7 badge-card relative shadow-xl pr-14">
+                    <h1 class="text-xl font-extrabold mb-3 tracking-wide">
+                        ¿Qué es la Crisis Hídrica?
+                    </h1>
+                    <p class="text-sm leading-relaxed text-slate-100 font-light">
+                        <span class="font-normal">*Se define como una disminución significativa en la <strong class="font-bold">calidad y cantidad</strong> de agua dulce disponible, lo que deriva en <strong class="font-bold">efectos perjudiciales</strong> para la salud humana y/o la actividad económica.</span>
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Texto introductorio -->
+            <div class="pt-4 text-justify px-1">
+                <p class="text-xs text-slate-800 leading-relaxed font-normal">
+                    Los <strong class="font-semibold italic">desafíos hídricos</strong> a nivel mundial no se limitan únicamente a la escasez y la contaminación sino que pueden derivar de diversas situaciones, como:
+                </p>
+            </div>
+
+            <!-- Sección de Pestañas Interactivas -->
+            <div class="space-y-0 pt-1" id="tabSection">
+                <!-- Botones de Navegación de Pestañas -->
+                <div class="bg-brandNavy rounded-t-2xl flex text-xs text-white font-medium overflow-hidden p-1 gap-1">
+                    <button id="tab-exceso" class="tab-btn flex-1 py-2 px-1 text-center font-bold italic rounded-xl bg-white/20 transition-all">
+                        Exceso de Agua
+                    </button>
+                    <button id="tab-falta" class="tab-btn flex-1 py-2 px-1 text-center italic rounded-xl hover:bg-white/10 transition-all opacity-80">
+                        Falta de Agua
+                    </button>
+                    <button id="tab-noapta" class="tab-btn flex-1 py-2 px-1 text-center italic rounded-xl hover:bg-white/10 transition-all opacity-80">
+                        Agua no apta
+                    </button>
+                </div>
+
+                <!-- Tarjeta de Contenido de la Pestaña Activa -->
+                <div class="bg-brandBlue text-brandNavy p-5 rounded-b-2xl shadow-md">
+                    <p id="tab-content" class="text-xs leading-relaxed font-normal text-slate-900">
+                        Debido a las precipitaciones extremas que generan inundaciones u otras consecuencias catastróficas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Texto descriptivo explicativo -->
+            <div class="py-2 text-justify px-1">
+                <p class="text-xs text-slate-800 leading-relaxed font-normal">
+                    Estos <strong class="font-semibold italic">riesgos medioambientales</strong> contribuyen directamente a <strong class="font-semibold italic">riesgos sociales</strong>, tales como crisis alimentarias, desastres ambientales y migraciones forzosas a gran escala. Generando inestabilidad, lo que deriva en <strong class="font-semibold">conflictos de Estados</strong> y una creciente polarización de las sociedades que precipitan la violencia, lo que nos lleva a un posible riesgo global, <strong class="font-bold">“Las armas de destrucción masiva”</strong>
+                </p>
+            </div>
+
+            <!-- Título de Sección: Crisis Ambiental -->
+            <div class="pt-4 pb-2">
+                <h2 class="text-4xl font-black text-brandNavy tracking-tight">
+                    Crisis Ambiental
+                </h2>
+            </div>
+
+    
+
+            <!-- Acordeón 2: Dependencia de acuíferos -->
+            <div class="rounded-2xl overflow-hidden bg-white shadow-lg border border-slate-200">
+                <button id="acc2-btn" class="accordion-btn w-full bg-brandNavy text-white p-4 text-left flex justify-between items-center transition-colors">
+                    <span class="italic font-medium text-sm">Dependencia de acuíferos</span>
+                    <i id="icon-acc2" class="fa-solid fa-minus text-sm"></i>
+                </button>
+                <div id="acc2" class="accordion-content open p-4 bg-white">
+                    <img src="imagenes/Acuiferos.png" 
+                         alt="Dependencia de acuíferos" 
+                         class="w-full h-72 object-cover rounded-xl filter contrast-125 saturate-130 mix-blend-multiply"
+                         onerror="this.src='https://placehold.co/600x400/101050/84c5f4?text=Dependencia+de+Acuiferos'">
+                </div>
+            </div>
+
+            <!-- Sección de Fuentes -->
+            <div class="pt-6 pb-2 text-[10px] text-slate-800 leading-tight space-y-1">
+                <p class="font-extrabold italic text-xs mb-1">Fuentes:</p>
+                <p class="italic font-light">* (2018). Pacific Institute. Reimagining Water for a Changing World. <em>“Defining Water Scarcity, Water Stress, and Water Risk”</em></p>
+                <p class="italic font-light">(2018). Pacific Institute. Reimagining Water for a Changing World. <em>“Water is Connected to Every Major Global Risk We Face”</em></p>
+            </div>
+
+        </div>
+
+        <!-- PIE DE PÁGINA (FOOTER) -->
+        <footer class="bg-brandFooter py-8 px-6 text-center text-brandNavy flex flex-col items-center justify-center space-y-3 mt-4">
+            <p class="text-xs font-extrabold tracking-wide">
+                Conoce más <span class="font-normal text-[11px] block sm:inline">a través de:</span>
+            </p>
+
+            <!-- Iconos de Redes Sociales -->
+            <div class="flex justify-center items-center gap-4 text-brandNavy">
+                <a href="https://www.instagram.com/crisishidrica_slp/" target="_blank" aria-label="Instagram" class="w-9 h-9 rounded-full border-2 border-brandNavy flex items-center justify-center hover:bg-brandNavy hover:text-white transition-colors">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://www.tiktok.com/@crisishidrica_slp/video/7699655157453245716?_r=1&_t=ZS-9AmmYEUilCm" target="_blank" aria-label="TikTok" class="w-9 h-9 rounded-full border-2 border-brandNavy flex items-center justify-center hover:bg-brandNavy hover:text-white transition-colors">
+                    <i class="fa-brands fa-tiktok text-base"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCjihpnQ7LtFqEc3fwlDolIQ" target="_blank" aria-label="YouTube" class="w-9 h-9 rounded-full border-2 border-brandNavy flex items-center justify-center hover:bg-brandNavy hover:text-white transition-colors">
+                    <i class="fa-brands fa-youtube text-base"></i>
+                </a>
+            </div>
+
+            <!-- Derechos reservados -->
+            <p class="text-[11px] font-bold tracking-tight pt-2">
+                ©Todos los derechos reservados
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Archivo JavaScript vinculado -->
+    <script src="script.js"></script>
+</body>
+</html>
